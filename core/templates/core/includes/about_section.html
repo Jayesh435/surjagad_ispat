@@ -1,0 +1,39 @@
+{% load static %}
+<section class="about-section">
+  <div class="absolute" style="top:-10rem;right:-10rem;width:37rem;height:37rem;background:var(--gradient-radial-warm);pointer-events:none;"></div>
+  <div class="container-x relative">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">A century of forging</div>
+        <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem;">
+          We don't make steel.<br />
+          We make <span style="font-style:italic; color:var(--primary); font-weight:400;">what it becomes</span>.
+        </h2>
+      </div>
+      <div class="reveal" style="transition-delay:150ms;">
+        <p style="font-size:1.125rem; color:var(--ink-soft); line-height:1.7;">
+          For four generations, Surjagad Ispat has stood at the intersection of metallurgy and ambition.
+          Our furnaces don't just produce steel — they shape skylines, span continents, and power
+          the silent infrastructure of modern life.
+        </p>
+        <a href="{% url 'about' %}" class="arrow-link" style="margin-top:2.5rem; display:inline-flex;">
+          Read our story
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:250ms; position:relative; aspect-ratio:16/8; box-shadow:var(--shadow-luxe); border-radius:2rem; overflow:hidden;">
+      <img src="{% static 'core/assets/plant-aerial.jpg' %}" alt="Aerial view of Surjagad Ispat integrated steel complex"
+           loading="lazy" style="position:absolute;inset:0;height:100%;width:100%;object-fit:cover;scale:1.05;transition:scale 2.4s var(--ease-cinematic);"
+           onmouseover="this.style.scale='1'" onmouseout="this.style.scale='1.05'" />
+      <div style="position:absolute;inset:0;background:linear-gradient(to top, var(--ink) 0%, rgba(20,20,20,0.4) 50%, transparent 100%);"></div>
+      <div style="position:absolute;bottom:0;left:0;padding:2rem 3.5rem;color:var(--background);">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.3em;color:var(--gold);margin-bottom:1rem;">Vijayanagar Complex · India</div>
+        <div class="font-display" style="font-size:clamp(1.5rem,3vw,3rem);max-width:28rem;line-height:1.05;">
+          One of the world's largest single-location steel plants.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

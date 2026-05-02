@@ -1,0 +1,70 @@
+{% load core_extras %}
+{% load static %}
+<section style="position:relative; padding:8rem 0; background:var(--ink); color:var(--background); overflow:hidden;">
+  <div style="position:absolute;inset:0;background:var(--gradient-radial-warm);opacity:0.5;"></div>
+  <div class="container-x relative">
+    <div style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:5rem;">
+      <div class="reveal">
+        <div class="eyebrow-light">Global presence</div>
+        <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem; color:var(--background);">
+          One company.<br /><span style="font-style:italic; color:var(--gold); font-weight:400;">Every continent.</span>
+        </h2>
+      </div>
+      <div class="reveal" style="transition-delay:150ms;">
+        <p style="max-width:28rem; color:rgba(253,250,244,0.7); font-size:1.125rem; line-height:1.6;">
+          Operations across 14 countries, exports to over 100. Surjagad Ispat steel travels further than most flags.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:200ms;">
+      <div class="map-wrap">
+        <!-- SVG world outline -->
+        <svg viewBox="0 0 100 50" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+          <defs>
+            <pattern id="dots-light" x="0" y="0" width="1.2" height="1.2" patternUnits="userSpaceOnUse">
+              <circle cx="0.6" cy="0.6" r="0.18" fill="rgba(253,250,244,0.18)" />
+            </pattern>
+          </defs>
+          <rect width="100" height="50" fill="url(#dots-light)" />
+          <g fill="rgba(253,250,244,0.06)">
+            <path d="M10,15 Q20,10 30,15 L32,28 Q25,32 18,28 L15,22 Z" />
+            <path d="M28,40 Q35,35 38,45 L36,60 Q30,63 26,57 L25,47 Z" />
+            <path d="M42,12 Q55,8 60,14 L58,22 Q50,24 44,20 Z" />
+            <path d="M50,30 Q58,28 62,38 L55,48 Q48,46 46,40 Z" />
+            <path d="M62,15 Q78,10 88,18 L86,32 Q80,35 70,30 L65,22 Z" />
+            <path d="M76,38 Q82,36 86,42 L82,46 Q78,46 76,42 Z" />
+          </g>
+          <!-- Connection lines from India HQ -->
+          <line x1="68" y1="48" x2="22" y2="40" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="50" y2="38" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="60" y2="48" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="47" y2="32" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="32" y2="65" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="82" y2="72" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+          <line x1="68" y1="48" x2="76" y2="56" stroke="rgba(176,85,58,0.5)" stroke-width="0.12" stroke-dasharray="0.6,0.4"/>
+        </svg>
+
+        <!-- Map pins -->
+        {% with regions="India|68|48|HQ · 6 plants,USA|22|40|2 plants,Italy|50|38|1 plant,UAE|60|48|Trade hub,UK|47|32|Sales office,Brazil|32|65|Mining,Australia|82|72|Mining,Singapore|76|56|APAC HQ" %}
+        {% for region in regions|split:"," %}
+        {% with parts=region|split:"|" %}
+        <div class="map-pin" style="left:{{ parts.1 }}%;top:{{ parts.2 }}%;">
+          <div class="pin-ring animate-ping" style="animation-delay:{{ forloop.counter0 }}00ms;"></div>
+          <div class="pin-dot"></div>
+          <div class="pin-tooltip">
+            <div class="pin-name">{{ parts.0 }}</div>
+            <div class="pin-label">{{ parts.3 }}</div>
+          </div>
+        </div>
+        {% endwith %}
+        {% endfor %}
+        {% endwith %}
+
+        <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-size:10px;text-transform:uppercase;letter-spacing:0.3em;color:rgba(253,250,244,0.6);">
+          14 countries · 100+ export markets
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

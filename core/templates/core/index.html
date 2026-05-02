@@ -1,0 +1,94 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Surjagad Ispat Pvt. Ltd. · Engineering Strength. Building the Future.{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO ===== -->
+<section class="hero-section">
+  <div class="hero-bg">
+    <video autoplay loop muted playsinline preload="auto" poster="{% static 'core/assets/hero-steel.jpg' %}">
+      {# If you have a video file, put it in core/static/core/videos/hero.mp4 and uncomment: #}
+      {# <source src="{% static 'core/videos/hero.mp4' %}" type="video/mp4" /> #}
+    </video>
+    <img src="{% static 'core/assets/hero-steel.jpg' %}" alt="" aria-hidden="true" class="animate-slow-zoom" />
+  </div>
+  <div class="hero-overlay-1"></div>
+  <div class="hero-overlay-2"></div>
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.08;mix-blend-mode:screen;"></div>
+
+  <div class="container-x hero-content">
+    <div style="max-width:62rem;">
+      <div class="hero-eyebrow">Surjagad Ispat Pvt. Ltd.</div>
+      <h1 class="hero-h1">
+        Forging strength.<br />
+        <span class="hero-italic">Building the future.</span>
+      </h1>
+      <p class="hero-body font-body">
+        From iron ore to integrated infrastructure — Surjagad Ispat shapes the steel that powers
+        India's tomorrow. <span style="color:var(--gold);">Mined responsibly. Forged precisely.</span>
+        Delivered worldwide.
+      </p>
+      <div class="hero-ctas">
+        <a href="{% url 'business' %}" class="btn-primary-rounded">
+          <span>Explore Business</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="{% url 'contact' %}" class="btn-outline-rounded">
+          Investor Relations
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span class="label">Scroll</span>
+      <div class="scroll-track">
+        <span class="scroll-dot animate-scroll-indicator"></span>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" transform="scale(0.67)"/></svg>
+    </div>
+
+    <!-- Side index -->
+    <div class="hero-side-index">
+      <span style="color:var(--gold);">— 01 Mine</span>
+      <span>02 Forge</span>
+      <span style="opacity:0.6;">03 Build</span>
+      <span style="opacity:0.4;">04 Deliver</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+{% include 'core/includes/stats_bar.html' %}
+
+<!-- ===== ABOUT ===== -->
+{% include 'core/includes/about_section.html' %}
+
+<!-- ===== SEGMENTS ===== -->
+{% include 'core/includes/segments.html' with segments=segments %}
+
+<!-- ===== PRODUCTS ===== -->
+{% include 'core/includes/products_section.html' %}
+
+<!-- ===== PROJECTS ===== -->
+{% include 'core/includes/projects.html' %}
+
+<!-- ===== ESG ===== -->
+{% include 'core/includes/esg.html' %}
+
+<!-- ===== TRUST ===== -->
+{% include 'core/includes/trust.html' %}
+
+<!-- ===== GLOBAL ===== -->
+{% include 'core/includes/global.html' %}
+
+<!-- ===== NEWS ===== -->
+{% include 'core/includes/news.html' %}
+
+<!-- ===== CAREERS CTA ===== -->
+{% include 'core/includes/careers_cta.html' %}
+
+{% endblock %}

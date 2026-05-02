@@ -1,0 +1,30 @@
+{% load core_extras %}
+{% load static %}
+<section style="padding:7rem 0; background:var(--background); border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden;">
+  <div class="container-x">
+    <div style="display:grid; gap:4rem; align-items:center;">
+      <div class="reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="var(--primary)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:2rem;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <blockquote class="font-display" style="font-size:clamp(1.5rem,3vw,3rem); line-height:1.15; max-width:48rem;">
+          &ldquo;Surjagad Ispat represents the rare convergence of <span style="color:var(--primary); font-style:italic;">industrial scale</span>, disciplined capital allocation, and a credible decarbonization roadmap. A foundational holding for any long-horizon portfolio.&rdquo;
+        </blockquote>
+        <div style="margin-top:2.5rem; display:flex; align-items:center; gap:1rem;">
+          <div style="height:3rem; width:3rem; background:var(--gradient-crimson-deep); display:flex; align-items:center; justify-content:center; color:var(--background); font-family:'Playfair Display',Georgia,serif; font-size:1.125rem;">M</div>
+          <div>
+            <div class="font-display" style="font-size:1rem;">Marcus Vance</div>
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.25em; color:var(--ink-muted); margin-top:0.25rem;">Partner · Continental Capital</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:200ms; max-width:28rem;">
+        <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:var(--ink-muted); margin-bottom:2rem;">Recognised by</div>
+        <div class="awards-grid">
+          {% for award in "Forbes · Asia 200 Best,S&P Global · Sustainability Yearbook,World Steel · Climate Action,Dun & Bradstreet · AAA Rating,FT · Asia Pacific Top 100,BSI · Carbon Disclosure A"|split:"," %}
+          <div class="award-cell">{{ award }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

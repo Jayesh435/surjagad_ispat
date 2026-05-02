@@ -1,0 +1,26 @@
+{% load static %}
+<section class="page-hero">
+  {% if image %}
+  <div class="page-hero-img">
+    <img src="{% static image %}" alt="" />
+  </div>
+  {% endif %}
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.5;pointer-events:none;"></div>
+  <div style="position:absolute;top:-8rem;left:-8rem;width:32rem;height:32rem;background:var(--gradient-radial-warm);pointer-events:none;"></div>
+
+  <div class="container-x relative" style="padding-top:4rem;">
+    <div class="reveal">
+      <div class="eyebrow">{{ eyebrow }}</div>
+    </div>
+    <div class="reveal" style="transition-delay:120ms;">
+      <h1 class="font-display" style="font-size:clamp(2.5rem,7vw,6rem); line-height:1.0; margin-top:2rem; max-width:64rem; color:var(--foreground);">
+        {{ title }}
+      </h1>
+    </div>
+    {% if intro %}
+    <div class="reveal" style="transition-delay:250ms;">
+      <p style="margin-top:3rem; max-width:40rem; font-size:1.25rem; color:var(--ink-soft); line-height:1.6;">{{ intro }}</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

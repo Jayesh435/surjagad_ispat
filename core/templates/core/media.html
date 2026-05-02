@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Media & News · Surjagad Ispat Pvt. Ltd.{% endblock %}
+
+{% block content %}
+
+{% with eyebrow="Media · Newsroom" title="Updates from the <span class='text-gradient-blue'>furnace floor</span>." intro="Press releases, investor updates, and stories from across our global operations." %}
+{% include 'core/includes/page_hero.html' %}
+{% endwith %}
+
+<!-- News list -->
+<section style="padding:4rem 0 8rem;">
+  <div class="container-x">
+    <div style="border-top:1px solid var(--border);">
+      {% for item in news %}
+      <div class="reveal" style="transition-delay:{{ forloop.counter0 }}80ms;">
+        <a href="#" class="news-row">
+          <div class="news-date">{{ item.date }}</div>
+          <div class="news-cat">{{ item.category }}</div>
+          <h3 class="news-title font-display">{{ item.title }}</h3>
+          <div class="news-meta">
+            {{ item.read }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

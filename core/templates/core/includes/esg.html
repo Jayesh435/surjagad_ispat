@@ -1,0 +1,62 @@
+{% load static %}
+<section class="esg-section">
+  <div class="esg-img-half">
+    <img src="{% static 'core/assets/esg-wind.jpg' %}" alt="" loading="lazy" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--surface) 0%, rgba(240,234,226,0.4) 50%, transparent 100%);"></div>
+  </div>
+
+  <div class="container-x relative">
+    <div style="display:grid; gap:3rem;">
+      <div style="max-width:36rem;">
+        <div class="reveal">
+          <div class="eyebrow">Sustainability · ESG</div>
+          <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem;">
+            A <span style="font-style:italic; color:var(--primary); font-weight:400;">net-zero</span> blueprint for heavy industry.
+          </h2>
+          <p style="margin-top:2.5rem; color:var(--ink-soft); font-size:1.125rem; line-height:1.7; max-width:32rem;">
+            We've committed <span style="color:var(--primary); font-weight:500;">$5 billion</span> to decarbonization — from green hydrogen pilots to a 2.4 GW renewable
+            portfolio that already powers a third of our operations.
+          </p>
+        </div>
+
+        <div style="margin-top:3rem; display:flex; flex-direction:column; gap:1px;">
+          <!-- Metric 1 -->
+          <div class="reveal esg-metric" style="transition-delay:0ms;">
+            <div class="esg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </div>
+            <div>
+              <div class="esg-num font-display"><span class="counter" data-to="42" data-suffix="%">42%</span></div>
+              <div class="esg-label">CO₂ intensity reduction by 2030</div>
+              <div class="esg-base">vs. 2005 baseline</div>
+            </div>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="reveal esg-metric" style="transition-delay:120ms;">
+            <div class="esg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+            </div>
+            <div>
+              <div class="esg-num font-display"><span class="counter" data-to="95" data-suffix="%">95%</span></div>
+              <div class="esg-label">By-product recycling rate</div>
+              <div class="esg-base">Slag, dust, scale recovery</div>
+            </div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="reveal esg-metric" style="transition-delay:240ms;">
+            <div class="esg-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <div>
+              <div class="esg-num font-display"><span class="counter" data-to="3.2" data-suffix=" m³/t" data-decimals="1">3.2 m³/t</span></div>
+              <div class="esg-label">Specific water consumption</div>
+              <div class="esg-base">Best-in-class globally</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

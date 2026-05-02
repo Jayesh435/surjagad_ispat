@@ -1,0 +1,39 @@
+{% load static %}
+<section style="position:relative; padding:8rem 0; background:var(--background); border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden;">
+  <div class="container-x">
+    <div class="reveal" style="max-width:48rem; margin-bottom:5rem;">
+      <div class="eyebrow">Landmark projects</div>
+      <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem;">
+        Engineered to outlast <span style="font-style:italic; color:var(--primary); font-weight:400;">a lifetime</span>.
+      </h2>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:7rem;">
+      <!-- Project 1 -->
+      <div class="reveal projects-item">
+        <div class="project-img">
+          <img src="{% static 'core/assets/project-bridge.jpg' %}" alt="The Mandovi Crossing" loading="lazy" />
+        </div>
+        <div>
+          <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:var(--primary); margin-bottom:1.25rem;">Infrastructure · 2024</div>
+          <h3 class="font-display" style="font-size:clamp(2rem,3.5vw,3rem); line-height:1.05; margin-bottom:1.5rem;">The Mandovi Crossing</h3>
+          <p style="color:var(--ink-soft); line-height:1.6;">12 km cable-stayed marine span · 180,000 t structural steel · Engineered to withstand 200 km/h coastal winds for a design life of 120 years.</p>
+          <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.25em; color:var(--ink-muted);">Case study 01</div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="reveal projects-item reverse" style="transition-delay:100ms;">
+        <div class="project-img">
+          <img src="{% static 'core/assets/logistics-port.jpg' %}" alt="Dharamtar Deep Port" loading="lazy" />
+        </div>
+        <div>
+          <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:var(--primary); margin-bottom:1.25rem;">Logistics · 2023</div>
+          <h3 class="font-display" style="font-size:clamp(2rem,3.5vw,3rem); line-height:1.05; margin-bottom:1.5rem;">Dharamtar Deep Port</h3>
+          <p style="color:var(--ink-soft); line-height:1.6;">60 MTPA throughput · India's largest captive port · 18 m draft accommodating Capesize bulk carriers.</p>
+          <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.25em; color:var(--ink-muted);">Case study 02</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

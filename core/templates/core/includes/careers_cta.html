@@ -1,0 +1,54 @@
+{% load core_extras %}
+{% load static %}
+<section class="careers-cta">
+  <div class="grid-bg" style="position:absolute;inset:0;opacity:0.1;"></div>
+  <div style="position:absolute;top:-10rem;right:-10rem;width:44rem;height:44rem;background:var(--gradient-radial-warm);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-10rem;left:-10rem;width:32rem;height:32rem;background:var(--gradient-radial-warm);opacity:0.6;pointer-events:none;"></div>
+
+  <div class="container-x relative">
+    <div style="display:grid; gap:4rem; align-items:center;">
+      <div class="reveal">
+        <div style="max-width:44rem;">
+          <div class="eyebrow-light">Careers at Surjagad Ispat</div>
+          <h2 class="careers-cta-h2">
+            Build something<br />
+            <span style="font-style:italic; font-weight:300; background:var(--gradient-gold); -webkit-background-clip:text; background-clip:text; color:transparent;">that outlives you</span>.
+          </h2>
+          <p style="font-size:1.125rem; color:rgba(253,250,244,0.7); max-width:36rem; line-height:1.7;">
+            Join 38,000 engineers, metallurgists, and operators forging the materials of tomorrow.
+            We hire for craft, conviction, and the courage to engineer at scale.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:200ms; max-width:32rem;">
+        <div class="careers-cta-box">
+          <div class="cta-box-header">
+            <div>
+              <div class="cta-num">340<sup>+</sup></div>
+              <div class="cta-small">Open positions</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="font-display" style="font-size:1.875rem; color:var(--background);">14</div>
+              <div class="cta-small">Countries</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:2.5rem;">
+            {% for role in "Metallurgical Engineer · Vijayanagar,Process Lead · Cold Rolling,Sustainability Analyst · Mumbai,Mining Operations · Pilbara"|split:"," %}
+            <div class="cta-role-row">
+              <span>{{ role }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="rgba(253,250,244,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            {% endfor %}
+          </div>
+
+          <a href="{% url 'careers' %}" class="cta-btn" style="width:100%; justify-content:center;">
+            <span>View all positions</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

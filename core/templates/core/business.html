@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load core_extras %}
+{% load static %}
+
+{% block title %}Business · Surjagad Ispat Pvt. Ltd.{% endblock %}
+
+{% block content %}
+
+{% with eyebrow="Business" title="Four businesses.<br><span class='text-gradient-blue'>One integrated platform.</span>" intro="Vertically aligned from raw material to finished product. Horizontally diversified across the industries that build nations." %}
+{% include 'core/includes/page_hero.html' %}
+{% endwith %}
+
+<!-- Segments -->
+{% include 'core/includes/segments.html' with segments=segments %}
+
+<!-- Business detail -->
+<section style="padding:6rem 0;">
+  <div class="container-x">
+    {% for d in detail %}
+    <div class="reveal biz-row {% if forloop.counter0|divisibleby:2 == False %}reverse{% endif %}" id="{{ d.id }}" style="scroll-margin-top:8rem; transition-delay:{{ forloop.counter0 }}80ms;">
+      <div>
+        <div class="biz-no">{{ d.no }}</div>
+        <h2 class="biz-title font-display">{{ d.title }}</h2>
+        <p class="biz-body">{{ d.body }}</p>
+      </div>
+      <div class="biz-img">
+        {% if d.img %}
+        <img src="{% static d.img %}" alt="{{ d.title }}" loading="lazy" />
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

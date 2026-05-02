@@ -1,0 +1,45 @@
+{% load core_extras %}
+{% load static %}
+<section style="position:relative; padding:8rem 0; background:var(--surface);">
+  <div class="container-x">
+    <div style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:5rem;">
+      <div class="reveal">
+        <div class="eyebrow">Product portfolio</div>
+        <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem;">
+          Materials of <span style="font-style:italic; color:var(--primary); font-weight:400;">consequence</span>.
+        </h2>
+      </div>
+      <div class="reveal" style="transition-delay:150ms;">
+        <a href="{% url 'products' %}" class="arrow-link">
+          View full catalogue
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      {% with products_list="Hot & Cold Rolled Coils|IS 2062 / EN 10025|Precision-rolled coils for automotive, appliance, and industrial fabrication.|core/assets/product-coils.jpg,Galvanized Sheets|GP / GC / Colour-coated|Corrosion-resistant sheet products for roofing HVAC and white goods.|core/assets/product-sheets.jpg,Structural Steel|Fe 500 / 550 / 600|Heavy structural sections plates and TMT bars for high-rise and infrastructure.|core/assets/product-structural.jpg" %}
+      {% for prod in products_list|split:"," %}
+      {% with parts=prod|split:"|" %}
+      <div class="reveal" style="transition-delay:{{ forloop.counter0 }}20ms;">
+        <a href="{% url 'products' %}" class="product-card">
+          <img src="{% static parts.3 %}" alt="{{ parts.0 }}" loading="lazy" />
+          <div class="overlay"></div>
+          <div class="hover-overlay"></div>
+          <div class="no">0{{ forloop.counter }}</div>
+          <div class="info">
+            <div class="grade">{{ parts.1 }}</div>
+            <h3>{{ parts.0 }}</h3>
+            <p class="desc">{{ parts.2 }}</p>
+            <div class="discover">Discover
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endwith %}
+      {% endfor %}
+      {% endwith %}
+    </div>
+  </div>
+</section>

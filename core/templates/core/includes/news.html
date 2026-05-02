@@ -1,0 +1,35 @@
+{% load static %}
+<section style="padding:8rem 0; background:var(--background);">
+  <div class="container-x">
+    <div style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:4rem;">
+      <div class="reveal">
+        <div class="eyebrow">Newsroom · Investors</div>
+        <h2 class="font-display" style="font-size:clamp(2.5rem,5vw,4.5rem); line-height:1.02; margin-top:1.5rem;">
+          Signals from the <span style="font-style:italic; color:var(--primary); font-weight:400;">forge</span>.
+        </h2>
+      </div>
+      <div class="reveal" style="transition-delay:150ms;">
+        <a href="{% url 'media' %}" class="arrow-link">
+          All updates
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid var(--border);">
+      {% for item in news %}
+      <div class="reveal" style="transition-delay:{{ forloop.counter0 }}80ms;">
+        <a href="{% url 'media' %}" class="news-row">
+          <div class="news-date">{{ item.date }}</div>
+          <div class="news-cat">{{ item.category }}</div>
+          <h3 class="news-title font-display">{{ item.title }}</h3>
+          <div class="news-meta">
+            {{ item.read }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

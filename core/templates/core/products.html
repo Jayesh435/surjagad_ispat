@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load core_extras %}
+{% load static %}
+
+{% block title %}Products · Surjagad Ispat Pvt. Ltd.{% endblock %}
+
+{% block content %}
+
+{% with eyebrow="Products" title="The full <span class='text-gradient-metallic'>catalogue</span>." intro="A portfolio engineered for every application — from automobile bodies that crumple precisely, to bridges that hold for centuries." %}
+{% include 'core/includes/page_hero.html' %}
+{% endwith %}
+
+<section style="padding-bottom:8rem;">
+  <div class="container-x">
+    <div class="products-page-grid">
+      {% for p in items %}
+      <div class="reveal product-page-card" style="transition-delay:{{ forloop.counter0|divisibleby:3 }}00ms;">
+        <div class="product-page-img">
+          <img src="{% static p.img %}" alt="{{ p.name }}" loading="lazy" />
+        </div>
+        <div class="product-page-grade">{{ p.grade }}</div>
+        <h3 class="product-page-name font-display">{{ p.name }}</h3>
+        <div class="product-page-footer">
+          <span class="thick-label">Thickness</span>
+          <span class="thick font-display">{{ p.thick }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load core_extras %}
+{% load static %}
+
+{% block title %}Careers · Surjagad Ispat Pvt. Ltd.{% endblock %}
+
+{% block content %}
+
+{% with eyebrow="Careers" title="Build the things <em style='font-style:italic; font-weight:300;'>that build</em> the world." intro="38,000 people. 14 countries. One unrelenting standard. Find your role at Surjagad Ispat." %}
+{% include 'core/includes/page_hero.html' %}
+{% endwith %}
+
+<section style="padding-bottom:8rem;">
+  <div class="container-x">
+    <div class="reveal">
+      <div class="roles-list">
+        {% for r in roles %}
+        <div class="role-row reveal" style="transition-delay:{{ forloop.counter0 }}80ms;">
+          <h3 class="role-title font-display">{{ r.title }}</h3>
+          <div class="role-loc">{{ r.loc }}</div>
+          <div class="role-type">{{ r.type }}</div>
+          <div style="display:flex; justify-content:flex-end;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="var(--ink-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load core_extras %}
+{% load static %}
+<!-- Investor ticker -->
+<div class="ticker-bar">
+  <div class="ticker-inner animate-ticker">
+    {% for item in "NSE: SURJAGAD · ₹942.30 · ▲ 1.84%,BSE: 500900 · ₹941.85 · ▲ 1.79%,FY24 Revenue · ₹1,75,000 Cr,Q3 EBITDA · ₹6,200 Cr,Credit rating · AA+ Stable (CRISIL),Dividend · ₹7.30 per share"|split:"," %}
+    <span class="ticker-item"><span class="ticker-dot"></span><span style="color:rgba(253,250,244,0.8);">{{ item }}</span></span>
+    {% endfor %}
+    {% for item in "NSE: SURJAGAD · ₹942.30 · ▲ 1.84%,BSE: 500900 · ₹941.85 · ▲ 1.79%,FY24 Revenue · ₹1,75,000 Cr,Q3 EBITDA · ₹6,200 Cr,Credit rating · AA+ Stable (CRISIL),Dividend · ₹7.30 per share"|split:"," %}
+    <span class="ticker-item"><span class="ticker-dot"></span><span style="color:rgba(253,250,244,0.8);">{{ item }}</span></span>
+    {% endfor %}
+  </div>
+</div>
+
+<section class="stats-section" style="padding:6rem 0;">
+  <div class="container-x">
+    <div class="reveal" style="margin-bottom:4rem; max-width:32rem;">
+      <div class="eyebrow">By the numbers</div>
+      <h2 class="font-display" style="font-size:clamp(2rem,4vw,3.5rem); line-height:1.05; margin-top:1.5rem;">
+        A century of scale, <span style="font-style:italic; color:var(--primary);">engineered</span>.
+      </h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-cell reveal" style="border-right:1px solid var(--border);" data-delay="0">
+        <div class="stat-no">01</div>
+        <div class="stat-num font-display"><span class="counter" data-to="41" data-suffix="M">41M</span></div>
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+          <div class="stat-label">Tonnes annual capacity</div>
+          <div class="stat-sub">Crude steel · FY24</div>
+        </div>
+      </div>
+      <div class="stat-cell reveal" style="border-right:1px solid var(--border);" data-delay="120">
+        <div class="stat-no">02</div>
+        <div class="stat-num font-display"><span class="counter" data-to="14" data-suffix="">14</span></div>
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+          <div class="stat-label">Countries of operation</div>
+          <div class="stat-sub">Across 6 continents</div>
+        </div>
+      </div>
+      <div class="stat-cell reveal" style="border-right:1px solid var(--border);" data-delay="240">
+        <div class="stat-no">03</div>
+        <div class="stat-num font-display"><span class="counter" data-to="100" data-suffix="+">100+</span></div>
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+          <div class="stat-label">Years of forging</div>
+          <div class="stat-sub">Founded 1924</div>
+        </div>
+      </div>
+      <div class="stat-cell reveal" data-delay="360">
+        <div class="stat-no">04</div>
+        <div class="stat-num font-display"><span class="counter" data-to="38" data-suffix="K">38K</span></div>
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+          <div class="stat-label">People worldwide</div>
+          <div class="stat-sub">Engineers &amp; operators</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
