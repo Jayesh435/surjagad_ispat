@@ -24,10 +24,9 @@ def about(request):
         {'year': '2024', 'text': 'Pledged $5B toward a net-zero roadmap by 2050.'},
     ]
     leaders = [
-        {'name': 'Aarav Mehta', 'role': 'Chairman & Managing Director'},
-        {'name': 'Sara Iyer', 'role': 'CEO, Steel Business'},
-        {"name": "Rohan D'Souza", 'role': 'Chief Sustainability Officer'},
-        {'name': 'Naomi Park', 'role': 'Group CFO'},
+        {'name': 'Shri Sunil Joshi', 'role': 'Chairman, Surjagad Ispat Group'},
+        {'name': 'Mr. Vedansh Joshi', 'role': 'Managing Director, Surjagad Ispat Group'},
+
     ]
     vision_blocks = [
         {'k': 'Vision', 'v': 'To forge the materials and infrastructure of a sustainable, sovereign tomorrow.'},
