@@ -18,9 +18,9 @@
     </div>
 
     <div class="products-grid">
-      {% with products_list="Hot & Cold Rolled Coils|IS 2062 / EN 10025|Precision-rolled coils for automotive, appliance, and industrial fabrication.|core/assets/product-coils.jpg,Galvanized Sheets|GP / GC / Colour-coated|Corrosion-resistant sheet products for roofing HVAC and white goods.|core/assets/product-sheets.jpg,Structural Steel|Fe 500 / 550 / 600|Heavy structural sections plates and TMT bars for high-rise and infrastructure.|core/assets/product-structural.jpg" %}
-      {% for prod in products_list|split:"," %}
-      {% with parts=prod|split:"|" %}
+      {% with products_list="Hot & Cold Rolled Coils~IS 2062 / EN 10025~Precision-rolled coils for automotive; appliance; and industrial fabrication.~core/assets/product-coils.jpg::Galvanized Sheets~GP / GC / Colour-coated~Corrosion-resistant sheet products for roofing; HVAC; and white goods.~core/assets/product-sheets.jpg::Structural Steel~Fe 500 / 550 / 600~Heavy structural sections; plates; and TMT bars for high-rise and infrastructure.~core/assets/product-structural.jpg" %}
+      {% for prod in products_list|split:"::" %}
+      {% with parts=prod|split:"~" %}
       <div class="reveal" style="transition-delay:{{ forloop.counter0 }}20ms;">
         <a href="{% url 'products' %}" class="product-card">
           <img src="{% static parts.3 %}" alt="{{ parts.0 }}" loading="lazy" />
