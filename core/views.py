@@ -109,9 +109,6 @@ def media_page(request):
 def reports(request):
     statutory_reports = [
         {'title': 'Environmental Clearance copy of Surjagad Ispat Vijayanagar Plant (25 MTPA)', 'category': 'Environmental', 'date': '2024'},
-        {'title': 'Jajang Iron Ore Mine Environmental Clearance (EC) Compliance - April 2025 to September 2025', 'category': 'Environmental Clearance', 'date': '2025'},
-        {'title': 'Gonua Iron Ore Mine Environmental Clearance (EC) Compliance - April 2025 to September 2025', 'category': 'Environmental Clearance', 'date': '2025'},
-        {'title': 'Rama Iron Ore Mine EC Letter', 'category': 'Environmental Clearance', 'date': '2024'},
         {'title': 'Annual ESG Report FY2024-25', 'category': 'ESG Report', 'date': '2025'},
         {'title': 'Corporate Governance Report', 'category': 'Governance', 'date': '2025'},
     ]
