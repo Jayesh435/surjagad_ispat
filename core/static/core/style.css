@@ -265,8 +265,9 @@ img { display: block; max-width: 100%; }
 
 .nav-spacer { transition: height 0.3s; }
 
-/* ===== Footer ===== */
 .footer { position: relative; background: var(--surface-dark); color: var(--background); overflow: hidden; }
+/* Override gold color inside footer to use brand red for accents */
+.footer { --gold: var(--primary); --gold-light: var(--primary-glow); }
 .footer-radial { position: absolute; top: -10rem; left: 50%; transform: translateX(-50%); width: 900px; height: 500px; background: var(--gradient-radial-warm); pointer-events: none; }
 .footer-inner { position: relative; padding-top: 7rem; padding-bottom: 2.5rem; }
 
